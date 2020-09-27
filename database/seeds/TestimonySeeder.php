@@ -1,8 +1,9 @@
 <?php
 
+use App\Testimony;
 use Illuminate\Database\Seeder;
-use App\User;
-class UserSeeder extends Seeder
+
+class TestimonySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class)->states('Admin')->create();
-        factory(User::class,3)->create();
+        factory(Testimony::class,6)->create();
     }
 }

@@ -1,10 +1,6 @@
 <?php
 
-use App\Branch_office;
-use App\Company;
-use App\Contractor;
-use App\Document;
-use App\Employee;
+use App\Schedule;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +17,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserTypeSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(ScheduleSeeder::class);
+        $this->call(TherapySeeder::class);
+        $this->call(TestimonySeeder::class);
+        $this->call(BlogSeeder::class);
+        
     }
 
     protected function truncateTablas()
@@ -28,6 +29,12 @@ class DatabaseSeeder extends Seeder
         $tables = [
             'user_types',
             'users',
+            'schedule',
+            'therapy',
+            'testimony',
+            'blog',
+            'user_therapy',
+            'user_shedule'
         ];
 
         foreach ($tables as $table) {

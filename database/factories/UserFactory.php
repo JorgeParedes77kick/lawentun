@@ -21,7 +21,6 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     static $password;
     $id=User_type::all()->random()->id;
-
     return [
         'name' => $faker->name,
         'email' => $faker->email,

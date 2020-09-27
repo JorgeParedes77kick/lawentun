@@ -33,4 +33,20 @@ class User extends Model implements Authenticatable
     {
         return $this->belongsTo(User_type::class, 'id_type');
     }
+    public function Schedules()
+    {
+        return $this->belongsToMany(Schedule::class, 'user_schedules', 'id_user','id_schedule' );
+    }
+    public function Therapies()
+    {
+        return $this->belongsToMany(Therapy::class, 'user_therapies', 'id_user','id_therapy' );
+    }
+    public function User_schedules()
+    {
+        return $this->hasMany(User_schedule::class, 'id_user');
+    }
+    public function User_therapies()
+    {
+        return $this->hasMany(User_therapy::class, 'id_user');
+    }
 }

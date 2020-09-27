@@ -17,9 +17,6 @@ class CreateTherapiesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->bigInteger('id_user_therapy')->unsigned();
-			$table->foreign('id_user_therapy')->references('id')->on('user_therapy')
-                ->constrained('user_therapy')->onDelete('cascade');
             $table->timestamps();
         });
     }
